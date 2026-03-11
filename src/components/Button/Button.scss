@@ -1,0 +1,48 @@
+// src klasörüne çıkıp değişkenleri alıyoruz
+@import '../../variables.scss';
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease; // Renk geçişleri yumuşak olsun diye
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  // Primary Buton
+  &--primary {
+    background-color: var(--primary-color);
+    color: white;
+    
+    &:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px); // Hafif yukarı kalkma efekti
+    }
+
+    &:active {
+      transform: translateY(0); // Basınca geri in
+    }
+  }
+
+  // Outline Buton
+  &--outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover {
+      background-color: rgba(0, 123, 255, 0.1); // Hafif mavi arka plan
+      border-color: var(--primary-hover);
+      color: var(--primary-hover);
+      transform: translateY(-2px); // Hafif yukarı kalkma efekti
+    }
+
+    &:active {
+      transform: translateY(0); // Basınca geri in
+    }
+  }
+}

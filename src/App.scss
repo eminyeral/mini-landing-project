@@ -1,0 +1,83 @@
+@import './variables.scss';
+
+// Sayfanın en dış katmanı (Body)
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden; // Mobilde sağa kaymayı engeller
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Yatayda her şeyi merkeze çek */
+  justify-content: center;   /* Dikeyde her şeyi merkeze çek */
+  width: 100vw;             /* Ekran genişliğinin tamamını baz al */
+  min-height: 100vh;        /* Ekran yüksekliğinin tamamını baz al */
+  margin: 0 auto;
+  text-align: center;       /* Yazıları orta */
+  
+  & > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // ≤ 640px
+  @media (max-width: 640px) {
+    padding: 15px;
+    h1 { font-size: 1.8rem; } // Mobilde başlığın fon boyutunu küçült
+    .button-group {
+      flex-direction: column; // Butonlar alt alta gelsin
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  // 641px – 1024px
+  @media (min-width: 641px) and (max-width: 1024px) {
+    max-width: 80%; // İçerik biraz daha genişlesin
+  }
+
+  // ≥ 1025px
+  @media (min-width: 1025px) {
+    max-width: 1200px;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+  max-width: 350px; // Formun çok yayılmasını engeller, derli toplu tutar
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  position: absolute; // Butonu sağ üst köşeye koyabilmek için sayfa akışından bağımsız hareket etmesini sağlar
+  top: 20px;          // Üstten 20px boşluk
+  right: 20px;        // Sağdan 20px boşluk
+  z-index: 1000;      // Diğer her şeyin üstünde görünmesini sağlar
+
+  // Mobilde çok kenara sıkışmasın
+  @media (max-width: 768px) {
+    top: 10px;
+    right: 10px;
+  }
+}
