@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react';
 import Button from './components/Button/Button';
 import Input from './components/Input/Input';
+import Card from './components/Card/Card';
 import './App.scss';
+
+const pricingData = [
+  { id: 1, title: "Başlangıç", price: "0", features: ["Temel Özellikler", "Mobil Uyumlu", "Ücretsiz Destek"], buttonText: "Ücretsiz Başla", highlight: false },
+  { id: 2, title: "Pro", price: "299", features: ["Karanlık Mod", "Sınırsız Proje", "Öncelikli Destek"], buttonText: "Hemen Al", highlight: true },
+  { id: 3, title: "Business", price: "899", features: ["Özel Tasarım", "API Erişimi", "7/24 Teknik Destek"], buttonText: "İletişime Geç", highlight: false }
+];
 
 function App() {
   // Tema durumunu takip eden state
@@ -19,22 +26,32 @@ function App() {
   return (
     <div className="container">
       <div className="theme-toggle">
-        <Button onClick={toggleTheme} variant="outline">
+        <Button onClick={toggleTheme} variant="outline" aria-label="Temayı Değiştir">
           {theme === 'light' ? '🌙' : '☀️'}
         </Button>
       </div>
 
-      <h1>Hoş Geldiniz!</h1>
-      
-      {/* Input alanları */}
-      <Input label="E-posta" id="email" placeholder="mail@adres.com" />
-      <Input label="Şifre" id="pass" type="password" placeholder="****" />
+      <header className="hero">
+        <h1>Geleceğin Arayüzü Burada</h1>
+        <p>Hızlı, modern ve tamamen duyarlı bileşen kütüphanesi.</p>
+      </header>
 
-      {/* Butonlar */}
-      <div className="button-group">
-        <Button variant="primary">Kayıt Ol</Button>
-        <Button variant="outline">Giriş Yap</Button>
-      </div>
+      {/* Fiyat Kartları Bölümü */}
+      <section className="pricing-section">
+        <h2>Fiyatlandırma Planları</h2>
+        <div className="pricing-container">
+          {pricingData.map(item => (
+            <Card key={item.id} data={item} />
+          ))}
+        </div>
+      </section>
+
+      {/* İletişim Formu */}
+      <section className="contact-section">
+        <h2>İletişim</h2>
+        <Input label="E-posta" id="email" placeholder="mail@adres.com" />
+        <Button variant="primary">Gönder</Button>
+      </section>
     </div>
   );
 }
