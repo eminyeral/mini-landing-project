@@ -1,0 +1,17 @@
+// Light Tema
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --input-border: #cccccc;
+}
+
+// Dark Tema
+[data-theme='dark'] {
+  --primary-color: #375a7f;
+  --primary-hover: #2b4764;
+  --bg-color: #121212;
+  --text-color: #f8f9fa;
+  --input-border: #444444;
+}
