@@ -1,6 +1,6 @@
 # Changelog
 
-Bu projedeki tüm öenmli teknik güncellemeler aşağıda yer almaktadır
+Bu projedeki tüm öenmli teknik güncellemeler aşağıda yer almaktadır.
 
 ## 11 Mart 2026
 
@@ -12,3 +12,8 @@ Bu projedeki tüm öenmli teknik güncellemeler aşağıda yer almaktadır
 - Dark/Light mod eklendi.
 - Mobil (≤640px), Tablet (641px-1024px) ve Masaüstü (≥1025px) için 3 farklı breakpoint tanımlandı.
 - `Card` bileşeni eklendi.
+
+## 12 Mart 2026
+
+### Eklenenler
+- `Modal` bileşeni eklendi.
