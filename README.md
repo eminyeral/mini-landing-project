@@ -32,16 +32,16 @@ Proje kapsamında geliştirilen ve props ile yapılandırılabilen yeniden kulla
 
 Projeyi yerel ortamınızda çalıstırmak için asağıdaki komutları izleyin: 
 
-'''bash
+```bash
 # Bağımlılıkları yükleyin
 npm install
 
-# Gelistirme sunucusunu baslatın
+# Geliştirme sunucusunu başlatın
 npm run dev
 
 # Üretim için derleme yapın
 npm run build
-'''
+```
 
 ## Mimari Notlar ve Kararlar
 
