@@ -2,7 +2,7 @@ import './Button.scss';
 
 /**
  * Button Bileşeni
- * @param {string} variant - 'primary' veya 'outline'
+ * @param {string} variant - 'primary' veya 'outline' (Görünüm tipi)
  * @param {function} onClick - Tıklama olayı
  * @param {children} children - Butonun içindeki yazı
  */
