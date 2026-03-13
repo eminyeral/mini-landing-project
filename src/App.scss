@@ -82,3 +82,13 @@ body {
   gap: 15px;       // Butonların arasını açar
   margin-top: 20px;
 }
+
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap; // Kartların sığmadığında alta kaymasını sağlar
+  justify-content: center;
+  gap: 2rem;
+  width: 100%; // Daralmayı engeller
+  max-width: 1200px; // Çok genişlemesini engeller
+  margin: 0 auto;
+}
