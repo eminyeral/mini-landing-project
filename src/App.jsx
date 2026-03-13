@@ -3,12 +3,20 @@ import Button from './components/Button/Button';
 import Input from './components/Input/Input';
 import Card from './components/Card/Card';
 import Modal from './components/Modal/Modal';
+import Accordion from './components/Accordion/Accordion'; // Accordion dahil edildi
 import './App.scss';
 
 const pricingData = [
   { id: 1, title: "Başlangıç", price: "0", features: ["Temel Özellikler", "Mobil Uyumlu", "Ücretsiz Destek"], buttonText: "Ücretsiz Başla", highlight: false },
   { id: 2, title: "Pro", price: "299", features: ["Karanlık Mod", "Sınırsız Proje", "Öncelikli Destek"], buttonText: "Hemen Al", highlight: true },
   { id: 3, title: "Business", price: "899", features: ["Özel Tasarım", "API Erişimi", "7/24 Teknik Destek"], buttonText: "İletişime Geç", highlight: false }
+];
+
+// SSS Verisi: Statik olarak dışarıda tanımlandı
+const faqData = [
+  { id: 1, question: "Kredi kartı gerekli mi?", answer: "Hayır, ücretsiz planımız için herhangi bir kart bilgisi gerekmemektedir." },
+  { id: 2, question: "İstediğim zaman iptal edebilir miyim?", answer: "Evet, üyeliğinizi dilediğiniz an panel üzerinden iptal edebilirsiniz." },
+  { id: 3, question: "Teknik destek sunuyor musunuz?", answer: "Pro ve Business planlarımızda 7/24 canlı destek hizmetimiz mevcuttur." }
 ];
 
 function App() {
@@ -51,6 +59,12 @@ function App() {
             <Card key={item.id} data={item} />
           ))}
         </div>
+      </section>
+
+      {/* SSS Bölümü: Accordion bileşeni kullanıldı */}
+      <section className="faq-section">
+        <h2 className="section-title">Sıkça Sorulan Sorular</h2>
+        <Accordion items={faqData} />
       </section>
 
       {/* İletişim: Basit bir yalancı submit formu */}

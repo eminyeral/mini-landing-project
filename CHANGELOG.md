@@ -17,3 +17,8 @@ Bu projedeki tüm öenmli teknik güncellemeler aşağıda yer almaktadır.
 
 ### Eklenenler
 - `Modal` bileşeni eklendi.
+
+## 13 Mart 2026
+
+### Eklenenler
+- `Accordion` bileşeni eklendi ve SSS kısmı oluşturuldu.

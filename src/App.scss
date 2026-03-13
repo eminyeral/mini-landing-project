@@ -103,3 +103,13 @@ h1 {
   display: flex;
   gap: 10px;
 }
+
+.faq-section {
+  margin: 4rem 0;
+  width: 100%;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
