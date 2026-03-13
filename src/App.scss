@@ -28,19 +28,39 @@ body {
 
   // ≤ 640px
   @media (max-width: 640px) {
-    padding: 15px;
-    h1 { font-size: 1.8rem; } // Mobilde başlığın fon boyutunu küçült
-    .button-group {
-      flex-direction: column; // Butonlar alt alta gelsin
-      width: 100%;
-      max-width: 320px;
-    }
+  .top-actions {
+    position: relative; // Absolute çakışmasını engeller
+    top: auto;
+    right: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
   }
+
+  padding: 15px;
+  h1 { font-size: 1.8rem; } // Mobilde başlığın fon boyutunu küçült
+  .button-group {
+    flex-direction: column; // Butonlar alt alta gelsin
+    width: 100%;
+    max-width: 320px;
+  }
+}
 
   // 641px – 1024px
   @media (min-width: 641px) and (max-width: 1024px) {
-    max-width: 80%; // İçerik biraz daha genişlesin
+  .top-actions {
+    position: relative; // Absolute çakışmasını önle
+    top: auto;
+    right: auto;
+    display: flex;
+    justify-content: flex-end; // Butonları sağa yasla ama başlığı aşağı it
+    padding-bottom: 1rem;
+    gap: 1rem;
   }
+
+  max-width: 80%; // İçerik biraz daha genişlesin
+}
 
   // ≥ 1025px
   @media (min-width: 1025px) {
