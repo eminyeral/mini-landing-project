@@ -22,3 +22,9 @@ Bu projedeki tüm öenmli teknik güncellemeler aşağıda yer almaktadır.
 
 ### Eklenenler
 - `Accordion` bileşeni eklendi ve SSS kısmı oluşturuldu.
+- İletişim formu için yalancı submit mantığı kuruldu.
+
+### Düzenlemeler
+- Form Doğrulama: E-posta format kontrolü ve boş alan uyarıları eklendi.
+- Responsive: Mobil ve tablet görünümlerinde navigasyon butonlarının (top-actions) başlık üzerine binme sorunu giderildi.
+- Erişilebilirlik: label-id eşleşmeleri ve klavye navigasyonu için iyileştirmeler yapıldı.
