@@ -1,6 +1,6 @@
 # Changelog
 
-Bu projedeki tüm öenmli teknik güncellemeler aşağıda yer almaktadır.
+Bu projedeki tüm önemli teknik güncellemeler aşağıda yer almaktadır.
 
 ## 11 Mart 2026
 

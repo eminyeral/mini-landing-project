@@ -1,6 +1,4 @@
-// src klasörüne çıkıp değişkenleri alıyoruz
-@import '../../variables.scss';
-
+@use '../../variables.scss' as *;
 .btn {
   padding: 12px 24px;
   border-radius: 8px;
