@@ -1,5 +1,11 @@
 @import './variables.scss';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // Elemanların dışa taşmasını engeller
+}
+
 // Sayfanın en dış katmanı (Body)
 body {
   margin: 0;
@@ -14,12 +20,12 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Yatayda her şeyi merkeze çek */
-  justify-content: center;   /* Dikeyde her şeyi merkeze çek */
-  width: 100vw;             /* Ekran genişliğinin tamamını baz al */
-  min-height: 100vh;        /* Ekran yüksekliğinin tamamını baz al */
+  align-items: center;      // Yatayda her şeyi merkeze çek
+  justify-content: center;   // Dikeyde her şeyi merkeze çek
+  width: 100vw;             // Ekran genişliğinin tamamını baz al
+  min-height: 100vh;        // Ekran yüksekliğinin tamamını baz al
   margin: 0 auto;
-  text-align: center;       /* Yazıları orta */
+  text-align: center;       // Yazıları orta
   
   & > * {
     margin-left: auto;
