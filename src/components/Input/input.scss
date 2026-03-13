@@ -1,0 +1,36 @@
+@import '../../variables.scss';
+
+// Input alanı ve etiketini kapsayan ana grup
+.input-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px; // Formun dev ekranlarda çok yayılmasını engeller
+
+  // Input üzerindeki açıklayıcı metin
+  &__label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    color: var(--text-color);
+  }
+
+  // Gerçek girdi alanı
+  &__field {
+    padding: 12px 16px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background-color: transparent; // Şeffaf arka plan
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import '../../variables.scss';
+
+.accordion {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--input-border);
+
+  &__item {
+    border-bottom: 1px solid var(--input-border);
+    background-color: var(--bg-color);
+
+    &:last-child { border-bottom: none; }
+
+    &--active {
+      .accordion__header { background-color: rgba(var(--primary-color), 0.05); }
+      .accordion__content { max-height: 200px; padding: 1rem 1.5rem; }
+      .accordion__icon { transform: rotate(180deg); color: var(--primary-color); }
+    }
+  }
+
+  &__header {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover { background-color: rgba(var(--primary-color), 0.03); }
+  }
+
+  &__question { flex: 1; }
+
+  &__icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    color: var(--text-color);
+  }
+
+  &__content {
+    max-height: 0; // Başlangıçta gizli
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); // Akıcı açılış animasyonu
+    background-color: var(--bg-color);
+  }
+
+  &__text {
+    padding: 0.5rem 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+}
