@@ -84,11 +84,18 @@ body {
 }
 
 .pricing-container {
-  display: flex;
-  flex-wrap: wrap; // Kartların sığmadığında alta kaymasını sağlar
-  justify-content: center;
-  gap: 2rem;
-  width: 100%; // Daralmayı engeller
-  max-width: 1200px; // Çok genişlemesini engeller
+  display: flex;         // Kartları yan yana dizer
+  flex-wrap: wrap;      // Ekran daralınca kartları aşağı kaydırır
+  justify-content: center; // Kartları ortalar
+  gap: 2rem;            // Kartlar arasındaki boşluk
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+
+  h2 {
+    width: 100%;        // Başlığın tüm satırı kaplamasını sağlar
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 }

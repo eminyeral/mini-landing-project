@@ -106,9 +106,7 @@
   }
 }
 
-// --- RESPONSIVE TASARIM (BREAKPOINTS) ---
-
-// 1. MOBİL (≤ 640px) -> Kartlar tam genişlik, alt alta
+// ≤ 640px
 @media (max-width: 640px) {
   .pricing-card {
     max-width: 100%;
@@ -116,14 +114,14 @@
   }
 }
 
-// 2. TABLET (641px – 1024px) -> Kartlar yan yana ama 2'li sığabilir
+// 641px – 1024px
 @media (min-width: 641px) and (max-width: 1024px) {
   .pricing-card {
     width: calc(50% - 2rem); // Yan yana 2 kart
   }
 }
 
-// 3. DESKTOP (≥ 1025px) -> Kartlar yan yana 3'lü
+// ≥ 1025px
 @media (min-width: 1025px) {
   .pricing-card {
     width: 300px; // Sabit genişlik, yan yana dizilim
