@@ -3,7 +3,7 @@ import Button from './components/Button/Button';
 import Input from './components/Input/Input';
 import Card from './components/Card/Card';
 import Modal from './components/Modal/Modal';
-import Accordion from './components/Accordion/Accordion'; // Accordion dahil edildi
+import Accordion from './components/Accordion/Accordion';
 import './App.scss';
 
 const pricingData = [
@@ -24,6 +24,11 @@ function App() {
   // Modal'ın açık/kapalı durumunu kontrol eden state
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Form doğrulama ve yalancı submit için eklenen state'ler [cite: 4, 8]
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [isSent, setIsSent] = useState(false);
+
   // Tema değişikliğini HTML kök elemanına yansıtır
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -31,6 +36,31 @@ function App() {
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  // İletişim formu doğrulama mantığı 
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    setEmailError('');
+    setIsSent(false);
+
+    // Boş alan kontrolü 
+    if (!email.trim()) {
+      setEmailError('E-posta alanı boş bırakılamaz.');
+      return;
+    }
+
+    // Basit e-posta format kontrolü 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Lütfen geçerli bir e-posta formatı girin.');
+      return;
+    }
+
+    // Yalancı submit işlemi 
+    console.log("Form verisi gönderildi:", email);
+    setIsSent(true);
+    setEmail('');
   };
 
   return (
@@ -67,11 +97,21 @@ function App() {
         <Accordion items={faqData} />
       </section>
 
-      {/* İletişim: Basit bir yalancı submit formu */}
+      {/* İletişim: Basit bir yalancı submit formu [cite: 4, 8] */}
       <section className="contact-section">
         <h2>İletişim</h2>
-        <Input label="E-posta" id="email" placeholder="mail@adres.com" />
-        <Button variant="primary">Gönder</Button>
+        <form onSubmit={handleContactSubmit} noValidate>
+          <Input 
+            label="E-posta" 
+            id="email" 
+            placeholder="mail@adres.com" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {emailError && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '0.5rem' }}>{emailError}</p>}
+          {isSent && <p style={{ color: 'green', fontSize: '0.8rem', marginTop: '0.5rem' }}>Mesajınız başarıyla iletildi!</p>}
+          <Button variant="primary" type="submit">Gönder</Button>
+        </form>
       </section>
 
       {/* Modal: Giriş Yap bölümü*/}
