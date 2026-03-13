@@ -10,6 +10,9 @@ Bu proje, semantik HTML, modern SCSS ve React kullanılarak geliştirilmiş, yü
 * **Tema Desteği:** CSS Variables kullanılarak merkezi Light ve Dark mod yönetimi.
 * **Form Doğrulama:** Yalın JS mantığıyla e-posta format kontrolü ve bos alan uyarıları içeren yalancı submit formu.
 
+## Lighthouse Raporu
+![Lighthouse Report](./lighthouse-report.png)
+
 ## Kullanılan Teknolojiler
 
 * **Framework:** React + Vite
